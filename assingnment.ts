@@ -46,4 +46,31 @@ interface Address {
   
   console.log(getAddressCity(person1));
   console.log(getAddressCity(person2));
+
+
+// problem 3
+
+class Cat {
+    // Define the Cat class here
+  }
+  
+  function isCat(object: any): object is Cat {
+    return object instanceof Cat;
+  }
+  
+  
+  const catInstance = new Cat();
+  const notACat = { name: "Whiskers" };
+  
+  if (isCat(catInstance)) {
+    console.log("Yes, it's a cat.");
+  } else {
+    console.log("No, it's not a cat.");
+  }
+  
+  if (isCat(notACat)) {
+    console.log("Yes, it's a cat.");
+  } else {
+    console.log("No, it's not a cat.");
+  }
   
