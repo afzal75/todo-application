@@ -140,3 +140,22 @@ function calculateSumIfArray(param: unknown): void {
 calculateSumIfArray([1, 2, 3, 4, 5]);
 calculateSumIfArray([1, "two", 3, "four", 5]);
 calculateSumIfArray("not an array");
+
+// problem 7
+
+function findFirstOccurrence<T>(arr: T[], value: T): number {
+  const index = arr.indexOf(value);
+  return index;
+}
+
+const numbersArray: number[] = [1, 2, 3, 4, 5];
+const stringsArray: string[] = ["apple", "banana", "cherry", "date"];
+
+const numberToFind = 3;
+const stringToFind = "banana";
+
+const indexInNumbers = findFirstOccurrence(numbersArray, numberToFind);
+const indexInStrings = findFirstOccurrence(stringsArray, stringToFind);
+
+console.log(`Index of ${numberToFind} in numbersArray: ${indexInNumbers}`);
+console.log(`Index of '${stringToFind}' in stringsArray: ${indexInStrings}`);
