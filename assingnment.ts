@@ -159,3 +159,30 @@ const indexInStrings = findFirstOccurrence(stringsArray, stringToFind);
 
 console.log(`Index of ${numberToFind} in numbersArray: ${indexInNumbers}`);
 console.log(`Index of '${stringToFind}' in stringsArray: ${indexInStrings}`);
+
+// problem 8
+
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+function calculateTotalCost(cart: Product[]): number {
+  let totalCost = 0;
+  for (const product of cart) {
+    totalCost += product.price * product.quantity;
+  }
+  return totalCost;
+}
+
+// Example usage:
+const shoppingCart: Product[] = [
+  { name: "Item 1", price: 10, quantity: 2 },
+  { name: "Item 2", price: 15, quantity: 1 },
+  { name: "Item 3", price: 5, quantity: 3 },
+];
+
+const total = calculateTotalCost(shoppingCart);
+console.log(`Total cost of the items in the shopping cart: $${total}`);
+
