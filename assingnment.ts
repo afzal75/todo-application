@@ -89,8 +89,45 @@ function sumNumbersInMixedList(mixedData: (string | number)[]): number {
     return total;
   }
   
-  
+
   const mixedData = [1, 'two', 3, 'four', 5];
   const result = sumNumbersInMixedList(mixedData);
   console.log(result);
+
+
+// problem 5
+
+interface Car {
+    make: string;
+    model: string;
+    year: number;
+  }
+  
+  interface Driver {
+    name: string;
+    licenseNumber: string;
+  }
+  
+  function combineCarAndDriver(car: Car, driver: Driver): { car: Car; driver: Driver } {
+    return {
+      car,
+      driver,
+    };
+  }
+  
+  
+  const carInfo: Car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2020,
+  };
+  
+  const driverInfo: Driver = {
+    name: 'Tamim Iqbal',
+    licenseNumber: 'ABC12345',
+  };
+  
+  const combinedInfo = combineCarAndDriver(carInfo, driverInfo);
+  console.log(combinedInfo);
+  
   
