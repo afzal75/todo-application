@@ -10,8 +10,40 @@ function processStringOrNumber(input: string | number): number {
   }
   
   const stringResult = processStringOrNumber('typescript');
-  console.log(`String length: ${stringResult}`); // Output: String length: 5
+  console.log(`String length: ${stringResult}`);
   
   const numberResult = processStringOrNumber(5);
-  console.log(`Square of the number: ${numberResult}`); // Output: Square of the number: 25
+  console.log(`Square of the number: ${numberResult}`);
+  
+
+// problem 2
+
+interface Address {
+    city: string;
+    street: string;
+  }
+  
+  interface Person {
+    address?: Address;
+    phone?: string;
+  }
+  
+  function getAddressCity(person: Person): string | undefined {
+    return person.address?.city;
+  }
+
+  const person1: Person = {
+    address: {
+      city: 'New York',
+      street: 'Broadway',
+    },
+    phone: '123-456-7890',
+  };
+  
+  const person2: Person = {
+    phone: '987-654-3210',
+  };
+  
+  console.log(getAddressCity(person1));
+  console.log(getAddressCity(person2));
   
