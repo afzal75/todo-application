@@ -58,7 +58,7 @@ class Cat {
     return object instanceof Cat;
   }
   
-  
+
   const catInstance = new Cat();
   const notACat = { name: "Whiskers" };
   
@@ -73,4 +73,24 @@ class Cat {
   } else {
     console.log("No, it's not a cat.");
   }
+  
+
+// problem 4 
+
+function sumNumbersInMixedList(mixedData: (string | number)[]): number {
+    let total = 0;
+    
+    for (const item of mixedData) {
+      if (typeof item === 'number') {
+        total += item as number;
+      }
+    }
+    
+    return total;
+  }
+  
+  
+  const mixedData = [1, 'two', 3, 'four', 5];
+  const result = sumNumbersInMixedList(mixedData);
+  console.log(result);
   
