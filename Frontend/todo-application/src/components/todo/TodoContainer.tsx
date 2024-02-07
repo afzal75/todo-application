@@ -1,18 +1,26 @@
-import { Button } from "../ui/button";
+
+import { useAppSelector } from "@/redux/hook";
+import AddTodoModal from "./AddTodoModal";
 import TodoCard from "./TodoCard";
+import TodoFilter from "./TodoFilter";
 
 const TodoContainer = () => {
+    const { todos } = useAppSelector((state) => state.todos)
     return (
         <div>
             <div className="flex justify-between mb-4">
-                <Button className="bg-primary-gradient text-xl font-semibold">Add Todo</Button>
-                <button>Filter</button>
+
+                <AddTodoModal />
+                <TodoFilter />
             </div>
             <div className="bg-primary-gradient w-full h-full rounded-xl p-[5px]">
                 <div className="bg-white space-y-3 p-5 w-full h-full rounded-lg">
-                    <TodoCard />
-                    <TodoCard />
-                    <TodoCard />
+                    {todos.map((item) => (
+                        <TodoCard
+                            key={item.id}
+                            title={item.title}
+                            description={item.description} />
+                    ))}
                 </div>
                 {/* <div className="bg-white p-5 text-2xl font-bold flex justify-center items-center rounded-md">
                     <p>There is no task pending</p>
